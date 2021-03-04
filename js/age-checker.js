@@ -11,11 +11,20 @@ function verify() {
         let age = year - Number(fyear.value)
         let gender = ''
         if (fsex[0].checked){
-            gender = 'Man'
+            gender = 'man'
+            if (age >= 0 && age < 10 ){
+                // Child
+            }else if (age < 21){
+                //Teen
+            }else if (age < 50){
+                //Adult
+            }else{
+                //old person
+            }
         } else if (fsex[1].checked){
-            gender = 'Woman'
+            gender = 'woman'
         }
-        res.getElementsByClassName.textAling = 'center'
+        res.style.textAlign = 'center'
         res.innerHTML = `A ${age} years old ${gender} was detected.`
     }
 }
