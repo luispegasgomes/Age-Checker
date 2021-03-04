@@ -12,19 +12,29 @@ function verify() {
         let gender = ''
         if (fsex[0].checked){
             gender = 'man'
-            if (age >= 0 && age < 10 ){
-                // Child
-            }else if (age < 21){
-                //Teen
-            }else if (age < 50){
-                //Adult
+            if (age >= 0 && age < 10 ) {
+                img.setAttribute('src', '../img/foto-bebe-m.png')
+            }else if (age < 21) {
+                img.setAttribute('src', '../img/foto-jovem-m.png')
+            }else if (age < 50) {
+                img.setAttribute('src', '../img/foto-adulto-m.png')
             }else{
-                //old person
+                img.setAttribute('src', '../img/foto-idoso-m.png')
             }
         } else if (fsex[1].checked){
             gender = 'woman'
+            if (age >= 0 && age < 10 ) {
+                img.setAttribute('src', '../img/foto-bebe-f.png')
+            }else if (age < 21) {
+                img.setAttribute('src', '../img/foto-jovem-f.png')
+            }else if (age < 50) {
+                img.setAttribute('src', '../img/foto-adulto-f.png')
+            }else{
+                img.setAttribute('src', '../img/foto-idoso-f.png')
+            }
         }
         res.style.textAlign = 'center'
         res.innerHTML = `A ${age} years old ${gender} was detected.`
+        res.appendChild(img)
     }
 }
