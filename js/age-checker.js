@@ -9,6 +9,13 @@ function verify() {
     }else{
         let fsex = document.getElementsByName('radsex')
         let age = year - Number(fyear.value)
-        res.innerHTML = `Calculated age: ${age}`
+        let gender = ''
+        if (fsex[0].checked){
+            gender = 'Man'
+        } else if (fsex[1].checked){
+            gender = 'Woman'
+        }
+        res.getElementsByClassName.textAling = 'center'
+        res.innerHTML = `A ${age} years old ${gender} was detected.`
     }
 }
