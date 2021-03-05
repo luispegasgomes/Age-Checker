@@ -6,30 +6,32 @@ function verify() {
     let res = document.querySelector('div#res')
     if (fyear.value.length == 0 || Number(fyear.value) > year) {
         window.alert('This values are wrong, try again :(')
-    }else{
+    } else {
         let fsex = document.getElementsByName('radsex')
         let age = year - Number(fyear.value)
         let gender = ''
-        if (fsex[0].checked){
+        let img = document.createElement('img')
+        img.setAttribute('id', 'foto')
+        if (fsex[0].checked) {
             gender = 'man'
-            if (age >= 0 && age < 10 ) {
-                img.setAttribute('src', '../img/foto-bebe-m.png')
-            }else if (age < 21) {
+            if (age >= 0 && age < 10) {
+                img = img.setAttribute('src', '../img/foto-bebe-m.png')
+            } else if (age < 21) {
                 img.setAttribute('src', '../img/foto-jovem-m.png')
-            }else if (age < 50) {
+            } else if (age < 50) {
                 img.setAttribute('src', '../img/foto-adulto-m.png')
-            }else{
+            } else {
                 img.setAttribute('src', '../img/foto-idoso-m.png')
             }
-        } else if (fsex[1].checked){
+        } else if (fsex[1].checked) {
             gender = 'woman'
-            if (age >= 0 && age < 10 ) {
+            if (age >= 0 && age < 10) {
                 img.setAttribute('src', '../img/foto-bebe-f.png')
-            }else if (age < 21) {
+            } else if (age < 21) {
                 img.setAttribute('src', '../img/foto-jovem-f.png')
-            }else if (age < 50) {
+            } else if (age < 50) {
                 img.setAttribute('src', '../img/foto-adulto-f.png')
-            }else{
+            } else {
                 img.setAttribute('src', '../img/foto-idoso-f.png')
             }
         }
